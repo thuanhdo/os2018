@@ -2,4 +2,5 @@ Student Info
 =======================
 
 * Name: Do Thu Anh
-* ID: *USTH-BI7-006*
+* ID: *BI7-006*
+
