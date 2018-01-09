@@ -1,0 +1,62 @@
+#Basic commands
+#DoThuAnh #Bi7-006
+
+echo hello world
+hello world
+
+passwd
+Changing password for thoanh.
+(current) UNIX password: 
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+
+date
+Tue Jan  9 23:40:48 ICT 2018
+
+hostname
+ubuntu
+
+arch
+x86_64
+
+uname -a
+Linux ubuntu 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+dmesg
+[...]
+ None
+[ 8981.636248] e1000: ens33 NIC Link is Down
+[ 8987.686579] e1000: ens33 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+[ 8995.748717] e1000: ens33 NIC Link is Down
+[ 9001.797349] e1000: ens33 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+[14891.849393] e1000: ens33 NIC Link is Down
+[14906.889477] e1000: ens33 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+
+uptime
+ 23:43:58 up  6:09,  1 user,  load average: 0.23, 0.58, 1.13
+
+who am i
+
+whoami
+thoanh
+
+who
+thoanh   tty7         2017-12-12 17:01 (:0)
+
+id
+uid=1000(thoanh) gid=1000(thoanh) groups=1000(thoanh),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+
+last
+wtmp begins Tue Jan  9 22:36:07 2018
+
+finger
+Login     Name       Tty      Idle  Login Time   Office     Office Phone
+thoanh    thuanhdo   tty7      28d  Dec 12 17:01 (:0)
+
+
+w
+ 23:47:31 up  6:13,  1 user,  load average: 0.44, 0.54, 0.99
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+thoanh   tty7     :0               12Dec17 28days  4:39   0.93s /sbin/upstar
+
