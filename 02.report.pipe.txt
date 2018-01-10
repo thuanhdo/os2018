@@ -2,6 +2,7 @@
 #Labwork2
 
 ~/os2018$ ls|grep list
+(0 file found)
 
 
 ~$ wc</etc/passwd
@@ -16,6 +17,6 @@ Swap:       1046524
 cpu cores	: 1
 
 ~/Pictures$ find . -type f -name "*.jpg"
-
+(0 file found)
 
 
