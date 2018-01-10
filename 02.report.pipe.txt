@@ -1,0 +1,21 @@
+#Pipe and i/o redirection
+#Labwork2
+
+~/os2018$ ls|grep list
+
+
+~$ wc</etc/passwd
+  40   69 2245
+
+~$ free
+             total        
+Mem:         994868
+Swap:       1046524     
+
+~$ cat< /proc/cpuinfo|grep "cpu core"
+cpu cores	: 1
+
+~/Pictures$ find . -type f -name "*.jpg"
+
+
+
