@@ -1,0 +1,32 @@
+~$ ps man
+   PID TTY      STAT   TIME COMMAND
+   854 tty1     -      0:00 /sbin/agetty --noclear tty1 linux
+     - -        Ss+    0:00 -
+   956 tty7     -      2:27 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/r
+     - -        Ssl+   2:18 -
+     - -        Ssl+   0:09 -
+  2159 pts/4    -      0:03 bash
+     - -        Ss     0:03 -
+ 10317 pts/4    -      0:00 ps man
+     - -        R+     0:00 -
+
+~$ (gnome-calculator&)
+
+~$ ps -ef |grep gnome-calculator
+thoanh    10328   1241  0 08:36 pts/4    00:00:00 gnome-calculator
+
+~$ cat</proc/10328/status | grep State
+State:	S (sleeping)
+
+~$ sudo kill -STOP 10328
+[sudo] password for thoanh: 
+
+~$ sudo kill -CONT 10328
+
+~$ sudo kill -KILL 10328
+
+
+
+
+
+
