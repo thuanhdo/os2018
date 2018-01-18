@@ -1,0 +1,9 @@
+(first command to get the columm's name)
+~$ cat</proc/sched_debug | grep switch
+            task    PID     tree-key       switches  prio     wait-time       
+~$ cat</proc/sched_debug | grep systemd
+         systemd     1     10245.778068     22651    120       0.000000
+
+~$ cat</proc/1/sched |grep switch
+nr_switches                                  :                23103
+
