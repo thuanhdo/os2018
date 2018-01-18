@@ -1,9 +1,15 @@
 (first command to get the columm's name)
-~$ cat</proc/sched_debug | grep switch
-            task    PID     tree-key       switches  prio     wait-time       
-~$ cat</proc/sched_debug | grep systemd
-         systemd     1     10245.778068     22651    120       0.000000
+~$ cat</proc/sched_debug | grep " switch"
+            task   PID         tree-key  switches   prio        wait-time        sum-exec         sum-sleep
+
+~$ cat</proc/sched_debug | grep "systemd "
+         systemd     1     10968.879277     23245   120         0.000000     25558.515278         0.000000 0 0 /autogroup-2
+         systemd  1482        60.195449        44   120         0.000000        61.590317         0.000000 0 0 /autogroup-92
+
 
 ~$ cat</proc/1/sched |grep switch
-nr_switches                                  :                23103
+nr_switches                                  :                23296
+nr_voluntary_switches                        :                14323
+nr_involuntary_switches                      :                 8973
+
 
