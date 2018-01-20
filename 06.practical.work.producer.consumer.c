@@ -24,25 +24,28 @@ void logVal(int i){
 
 void produce(item *i) {
 	while ((first +1)% BUFFER_SIZE ==last){
-		printf("Can't push new food into the buffer now.");} 
+		printf("Can't push new food into the buffer now.");
+	} 
 	memcpy(&buffer[first], i, sizeof(item));
 	printf("First item:\n");
 	logVal(first);
 	printf("Last item:\n");
 	logVal(last);
-	first = (first+1)% BUFFER_SIZE;
+first = (first+1)% BUFFER_SIZE;
 }
 
-item* consume(){
+void consume(){
 	while (first == last){
 		printf("We don't have anything to serve.");}
-	item *i = malloc(sizeof(item));
-	memcpy(i, &buffer[last], sizeof(item));
+	/*item *i = malloc(sizeof(item));
+	memcpy(&buffer[last],i, sizeof(item));*/
+	first = (first-1)%BUFFER_SIZE;
+	last = (last +1)% BUFFER_SIZE;
 	printf("First item:\n");
 	logVal(first);
 	printf("Last item:\n");
 	logVal(last);
-	last = (last +1)% BUFFER_SIZE;
+	
 }
 
 int main(){
