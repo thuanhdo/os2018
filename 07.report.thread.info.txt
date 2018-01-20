@@ -1,7 +1,10 @@
 ~$ ps -e |grep firefox
  40381 ?        00:00:16 firefox
 
-~$ ps -o nlwp 40381
+/$ ps -o nlwp 40381
 NLWP
-  57
+  50
+
+/proc/40381/task$ ls| wc -l
+50
 
