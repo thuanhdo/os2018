@@ -1,0 +1,7 @@
+~$ ps -e |grep firefox
+ 40381 ?        00:00:16 firefox
+
+~$ ps -o nlwp 40381
+NLWP
+  57
+
