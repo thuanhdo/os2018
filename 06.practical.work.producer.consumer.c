@@ -3,6 +3,7 @@
 #include<string.h>
 #define BUFFER_SIZE 10
 
+
 typedef struct {
 char type;
 int amount;
