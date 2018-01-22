@@ -14,7 +14,7 @@ typedef struct {
 item buffer[BUFFER_SIZE];
 	int first = 0;
 	int last = 0;
-
+	int justProduced = 0;
 void logVal(int i){
 	if (buffer[i].type==0)
 		printf("Item's type is fried chicken, amount is %d piece(s).\n\n", buffer[i].amount);    
@@ -31,15 +31,17 @@ void produce(item *i) {
 	logVal(first);
 	printf("Last item:\n");
 	logVal(last);
-first = (first+1)% BUFFER_SIZE;
+	first = (first+1)% BUFFER_SIZE;
+	justProduced = 1;
 }
 
 void consume(){
 	while (first == last){
 		printf("We don't have anything to serve.");}
-	/*item *i = malloc(sizeof(item));
-	memcpy(&buffer[last],i, sizeof(item));*/
-	first = (first-1)%BUFFER_SIZE;
+	if(justProduced == 1){
+		first = (first-1)%BUFFER_SIZE;
+		justProduced = 0;
+	}
 	last = (last +1)% BUFFER_SIZE;
 	printf("First item:\n");
 	logVal(first);
