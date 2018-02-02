@@ -16,11 +16,12 @@ item buffer[BUFFER_SIZE];
 int first = 0;
 int last = 0;
 int justProduced = 0;
+
 void logVal(int i){
 	if (buffer[i].type==0)
-		printf("Item's type is fried chicken, amount is %d piece(s).\n\n", buffer[i].amount);    
+		printf("%d piece(s) of fried chicken.\n", buffer[i].amount);    
 	else 
-		printf("Item's type is french fries, amount is %d gram(s).\n\n", buffer[i].amount);
+		printf("%d gram(s) of french fried.\n", buffer[i].amount);
 }
 
 void produce(item *i) {
@@ -29,10 +30,11 @@ void produce(item *i) {
 	} 
 	
 	memcpy(&buffer[first], i, sizeof(item));
-	printf("First item:\n");
+	printf("First item:");
 	logVal(first);
-	printf("Last item:\n");
+	printf("Last item:");
 	logVal(last);
+	printf("\n");
 	first = (first+1)% BUFFER_SIZE;	
 	justProduced = 1;
 }
@@ -46,10 +48,11 @@ void consume(){
 		justProduced = 0;
 	}
 	last = (last +1)% BUFFER_SIZE;
-	printf("First item:\n");
+	printf("First item:");
 	logVal(first);
-	printf("Last item:\n");
+	printf("Last item:");
 	logVal(last);
+	printf("\n");
 	
 }
 
@@ -72,6 +75,7 @@ void *produce_thread(void *param){
 	produce(&chick);
 	produce(&fries);
 	produce(&smokychick);
+
 }
 
 void *consume_thread(void *param){
@@ -82,10 +86,7 @@ void *consume_thread(void *param){
 int main(){
 	pthread_t tid1;
 	pthread_t tid2;
-	printf("Produce 3 products\n");	
 	pthread_create(&tid1, NULL, produce_thread, NULL);
-	pthread_join(tid1, NULL);
-	printf("Consume 2 of them\n");	
 	pthread_create(&tid2, NULL, consume_thread, NULL); 
 	pthread_join(tid2, NULL);
 
